@@ -15,6 +15,7 @@ Add some variables to your CI/CD configurations:
 - `PORTAINER_PASSWORD`: **(required)** the password for Portainer user.
 - `PORTAINER_NODES`: (optional) a comma-separated list of Docker nodes, or an asterisk (*) for all nodes, or you can omit this variable and the script will pull the image in the default node.
 - `PORTAINER_ENDPOINT`: (optional) the target Portainer endpoint, or you can omit this variable and the script will choose the first endpoint available.
+- `PYTHONUNBUFFERED`: (optional) set any value for this variable to disable stdout and stderr buffering on Python.
 
 Also, you need to embed the script as a file in your CI/CD configuration. Add a variable called `RETAINER`, select the "File" type and paste [the Retainer script](https://raw.githubusercontent.com/timoteoramos/retainer/master/src/retainer.py) in the content field.
 
