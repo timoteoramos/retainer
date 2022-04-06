@@ -131,7 +131,7 @@ class Portainer:
         response = self.api_request('api/endpoints/%d/docker/services' % endpoint, token=token)
 
         for service in response.json():
-            if image == service['Spec']['TaskTemplate']['ContainerSpec']['Image']:
+            if image in service['Spec']['TaskTemplate']['ContainerSpec']['Image']:
                 result.append(service)
 
                 self.restart_service(
