@@ -132,6 +132,7 @@ class Portainer:
 
         for service in response.json():
             if image in service['Spec']['TaskTemplate']['ContainerSpec']['Image']:
+                service['Spec']['TaskTemplate']['ContainerSpec']['Image'] = image
                 result.append(service)
 
                 self.restart_service(
